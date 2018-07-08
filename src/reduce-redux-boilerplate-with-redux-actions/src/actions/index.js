@@ -24,7 +24,7 @@ export const {
   fixTodoName,
 } = createActions(
   {
-    FIX_TODO_NAME: fixName,
+    [FIX_TODO_NAME]: fixName,
   },
   ADD_TODO,
   REMOVE_TODO,

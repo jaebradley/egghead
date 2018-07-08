@@ -18,15 +18,15 @@ let id = 0;
 // handleActions takes a map of the actionTypes to their respective reducer functions
 // in the case of combined actions, use [combineActions(SHOW_LOADER, HIDE_LOADER)] as the object key
 export default handleActions({
-  ADD_TODO: (state, action) => ({
+  [ADD_TODO]: (state, action) => ({
     ...state,
     todos: state.todos.concat({ id: id += 1, description: action.payload }),
   }),
-  REMOVE_TODO: (state, action) => ({
+  [REMOVE_TODO]: (state, action) => ({
     ...state,
     todos: state.todos.filter(todo => todo.id !== action.payload),
   }),
-  FIX_TODO_NAME: (state, action) => ({
+  [FIX_TODO_NAME]: (state, action) => ({
     ...state,
     currentTodo: action.payload,
   }),
