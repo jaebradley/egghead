@@ -45,3 +45,10 @@
 * Object properties
   * Pass in an object with properties that match an element
   * `.find({ alt: 'React logo' })`
+
+## Use snapshot testing
+
+* Can test that logo and header are rendered but how to test that the logo and header are in some particular order?
+* `Jest`'s `snapshot` feature allows us to take a "picture" of the component and basically make sure that UI has not changed when running future tests
+* `jest -u` updates the `snapshot`
+* `enzyme-to-json` outputs a more readable `snapshot` file

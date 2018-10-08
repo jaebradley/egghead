@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ExampleComponent /> matches the snapshot 1`] = `
+<div>
+  <header
+    className="jae baebae"
+  >
+    <img
+      alt="React logo"
+      src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+    />
+    <h1>
+      Blah blah blah I'm an example
+    </h1>
+  </header>
+  <Title
+    text="Blah blah blah I'm a Title"
+  />
+  <p
+    className="example-content"
+  >
+    Blah blah blah I'm a p element
+  </p>
+</div>
+`;

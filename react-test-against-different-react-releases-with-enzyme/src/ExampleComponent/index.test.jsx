@@ -2,6 +2,7 @@ import React from 'react';
 import {
   shallow,
 } from 'enzyme';
+import toJSON from 'enzyme-to-json';
 
 import ExampleComponent from './';
 
@@ -38,5 +39,9 @@ describe('<ExampleComponent />', () => {
 
   it('should find component with alt "React logo"', () => {
     expect(wrapper.find({ alt: 'React logo' }).exists()).toBe(true);
+  });
+
+  it('matches the snapshot', () => {
+    expect(toJSON(wrapper)).toMatchSnapshot();
   });
 });
