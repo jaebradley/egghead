@@ -52,3 +52,10 @@
 * `Jest`'s `snapshot` feature allows us to take a "picture" of the component and basically make sure that UI has not changed when running future tests
 * `jest -u` updates the `snapshot`
 * `enzyme-to-json` outputs a more readable `snapshot` file
+
+## Two types of `props` testing
+
+* Testing that the component takes the right props
+* Testing that the component uses the right props
+* `setProps` takes object that is passed to component as new props
+  * Calls `componentWillReceiveProps`
