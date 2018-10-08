@@ -27,3 +27,21 @@
 * `children()` to find all a node's children
 * `hasClass` to check if a node contains the specified string in the `className` `prop`
 * `text()` to get node's text
+
+## Five Different Types of Selectors
+
+* CSS selectors
+  * element syntax (`h1`)
+  * class syntax (`.jaebaebae`)
+  * id syntax (`#jaebaebae`)
+  * attribute syntax (`[href="jaebaebae"]`)
+  * `> + ~` (`jae > baebae`)
+* Prop selectors
+  * Can look up an element by a `prop` value
+    * `.find('[text="Some title"])` will look for a node with a `text` prop with the passed in value
+* Component constructor
+  * `enzyme` will identify the component based on the constructor function
+* Component display name - `ExampleComponent`
+* Object properties
+  * Pass in an object with properties that match an element
+  * `.find({ alt: 'React logo' })`

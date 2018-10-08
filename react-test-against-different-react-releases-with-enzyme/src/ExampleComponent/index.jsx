@@ -1,4 +1,5 @@
 import React from 'react';
+import Title from '../Title';
 
 const ExampleComponent = () => (
   <div>
@@ -11,6 +12,7 @@ const ExampleComponent = () => (
         Blah blah blah I'm an example
       </h1>
     </header>
+    <Title text={"Blah blah blah I'm a Title"} />
     <p className={"example-content"}>
       Blah blah blah I'm a p element
     </p>

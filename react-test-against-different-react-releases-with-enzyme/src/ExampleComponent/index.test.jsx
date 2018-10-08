@@ -27,4 +27,16 @@ describe('<ExampleComponent />', () => {
   it('p element should contain correct text', () => {
     expect(wrapper.find('p').text()).toBe("Blah blah blah I'm a p element");
   });
+
+  it('should contain title text', () => {
+    expect(wrapper.find('[text="Blah blah blah I\'m a Title"]').text()).toBe("<Title />");
+  });
+
+  it('should contain title', () => {
+    expect(wrapper.find('Title').exists()).toBe(true);
+  });
+
+  it('should find component with alt "React logo"', () => {
+    expect(wrapper.find({ alt: 'React logo' }).exists()).toBe(true);
+  });
 });
