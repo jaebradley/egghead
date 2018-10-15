@@ -59,3 +59,13 @@
 * Testing that the component uses the right props
 * `setProps` takes object that is passed to component as new props
   * Calls `componentWillReceiveProps`
+
+## Full DOM rendering (`mount`)
+
+* For components that touch DOM APIs or need full `React` lifecycle
+* Requires full-DOM API (`jsdom`, which is a headless browser implemented in `JS`)
+* `mount` takes the component as the first argument, and an (optional) object as the second argument that has a `context` property and an `attachTo` property
+* `context` is "context" want to pass to component
+* `attachTo` property can attach component to specific DOM element
+* Since `mount`ing actually mounts a component in the DOM, not `unmount`ing components can impact other tests
+* Snapshots will also fail for `mount`s vs. `shallow`s since the snapshot rendering is different
