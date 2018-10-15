@@ -69,3 +69,9 @@
 * `attachTo` property can attach component to specific DOM element
 * Since `mount`ing actually mounts a component in the DOM, not `unmount`ing components can impact other tests
 * Snapshots will also fail for `mount`s vs. `shallow`s since the snapshot rendering is different
+
+## Simulated Event Handlers
+
+* `.simulate('click')` will simulate a click event
+  * `'change'` will simulate change event, etc.
+* Trigger events that have side-effects (changes state, which then might have presentational changes (certain text looks different))

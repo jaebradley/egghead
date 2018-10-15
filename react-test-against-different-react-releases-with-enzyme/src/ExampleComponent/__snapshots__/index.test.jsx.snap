@@ -21,5 +21,15 @@ exports[`<ExampleComponent /> matches the snapshot 1`] = `
   >
     Blah blah blah I'm a p element
   </p>
+  <p
+    className="button-state"
+  >
+    No!
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Click me
+  </button>
 </div>
 `;

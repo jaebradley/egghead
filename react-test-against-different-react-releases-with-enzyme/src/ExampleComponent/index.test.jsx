@@ -9,8 +9,8 @@ import ExampleComponent from './';
 describe('<ExampleComponent />', () => {
   const wrapper = shallow(<ExampleComponent />);
 
-  it('should contain 1 p element', () => {
-    expect(wrapper.find('p').length).toBe(1);
+  it('should contain 2 p elements', () => {
+    expect(wrapper.find('p').length).toBe(2);
   });
 
   it('should contain an element with class name "example content"', () => {
@@ -25,8 +25,8 @@ describe('<ExampleComponent />', () => {
     expect(wrapper.find('header').hasClass('jae')).toBe(true);
   });
 
-  it('p element should contain correct text', () => {
-    expect(wrapper.find('p').text()).toBe("Blah blah blah I'm a p element");
+  it('first p element should contain correct text', () => {
+    expect(wrapper.find('p').first().text()).toBe("Blah blah blah I'm a p element");
   });
 
   it('should contain title text', () => {
@@ -43,5 +43,17 @@ describe('<ExampleComponent />', () => {
 
   it('matches the snapshot', () => {
     expect(toJSON(wrapper)).toMatchSnapshot();
+  });
+
+  it('on button click changes p text', () => {
+    const wrapper = shallow(<ExampleComponent />);
+    const button = wrapper.find('button');
+    expect(wrapper.find('.button-state').text()).toBe('No!');
+    button.simulate('click');
+    expect(wrapper.find('.button-state').text()).toBe('Yes!');
+  });
+
+  it('on input change, title changes text', () => {
+
   });
 });

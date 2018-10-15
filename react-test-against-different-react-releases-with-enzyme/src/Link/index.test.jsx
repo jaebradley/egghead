@@ -21,6 +21,11 @@ describe('<Link /> shallow rendering', () => {
     wrapper.setProps({ hide: true });
     expect(wrapper.get(0)).toBeNull();
   });
+
+  it('matches the snapshot', () => {
+    const wrapper = shallow(<Link />);
+    expect(toJSON(wrapper)).toMatchSnapshot();
+  });
 });
 
 describe('<Link /> mount rendering', () => {
