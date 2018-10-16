@@ -33,7 +33,7 @@ describe('<Link /> mount rendering', () => {
 
   it('a tag node renders href correctly', () => {
     const wrapper = mount(<Link address={address} />);
-    expect(wrapper.props().href).toBe(address);
+    expect(wrapper.find('a').props().href).toBe(address);
     wrapper.unmount();
   });
 
@@ -41,7 +41,7 @@ describe('<Link /> mount rendering', () => {
     const wrapper = mount(<Link hide={false} />);
     expect(wrapper.find('a').length).toBe(1);
     wrapper.setProps({ hide: true });
-    expect(wrapper.get(0)).toBeNull();
+    expect(wrapper.find('a').length).toBe(0);
     wrapper.unmount();
   });
 });

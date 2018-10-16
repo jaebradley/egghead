@@ -7,6 +7,8 @@ class ExampleComponent extends React.Component {
 
     this.state = {
       on: false,
+      inputValue: '',
+      mainColor: 'blue',
     };
   }
 
@@ -21,6 +23,7 @@ class ExampleComponent extends React.Component {
           <h1>
             Blah blah blah I'm an example
           </h1>
+          <h3 className={this.state.mainColor}>Everyone is Welcome!</h3>
         </header>
         <Title text={"Blah blah blah I'm a Title"} />
         <p className={"example-content"}>
@@ -32,6 +35,10 @@ class ExampleComponent extends React.Component {
         <button onClick={() => this.setState({ on: true })}>
           Click me
         </button>
+        <h2>
+          {this.state.inputValue}
+        </h2>
+        <input onChange={e => this.setState({ inputValue: e.currentTarget.value })} />
       </div>
     );
   }

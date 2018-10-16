@@ -75,3 +75,9 @@
 * `.simulate('click')` will simulate a click event
   * `'change'` will simulate change event, etc.
 * Trigger events that have side-effects (changes state, which then might have presentational changes (certain text looks different))
+* `simulate('click')` gets the `onClick` `prop` and executes it
+* `simulate` also takes an optional argument that "mocks" the event object passed to the event handler
+
+## `setState`
+
+* Can update state doing `wrapper.setState({ someStateProperty: someStateValue })`

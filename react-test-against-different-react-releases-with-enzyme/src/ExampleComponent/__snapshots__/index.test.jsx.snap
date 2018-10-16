@@ -12,6 +12,11 @@ exports[`<ExampleComponent /> matches the snapshot 1`] = `
     <h1>
       Blah blah blah I'm an example
     </h1>
+    <h3
+      className="blue"
+    >
+      Everyone is Welcome!
+    </h3>
   </header>
   <Title
     text="Blah blah blah I'm a Title"
@@ -31,5 +36,9 @@ exports[`<ExampleComponent /> matches the snapshot 1`] = `
   >
     Click me
   </button>
+  <h2 />
+  <input
+    onChange={[Function]}
+  />
 </div>
 `;

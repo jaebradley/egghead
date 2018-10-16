@@ -18,7 +18,7 @@ describe('<ExampleComponent />', () => {
   });
 
   it('should contain a header with two children', () => {
-    expect(wrapper.find('header').children().length).toBe(2);
+    expect(wrapper.find('header').children().length).toBe(3);
   });
 
   it('should contain a header with class name "jae"', () => {
@@ -54,6 +54,19 @@ describe('<ExampleComponent />', () => {
   });
 
   it('on input change, title changes text', () => {
+    const wrapper = shallow(<ExampleComponent />);
+    const input = wrapper.find('input');
+    expect(wrapper.find('h2').text()).toEqual('');
+    input.simulate('change', { currentTarget: { value: 'foobar' } });
+    expect(wrapper.find('h2').text()).toEqual('foobar');
+  });
 
+  it('updates className with new state', () => {
+    const wrapper = shallow(<ExampleComponent />);
+    expect(wrapper.find('.blue').length).toBe(1);
+    expect(wrapper.find('.red').length).toBe(0);
+    wrapper.setState({ mainColor: 'red' });
+    expect(wrapper.find('.blue').length).toBe(0);
+    expect(wrapper.find('.red').length).toBe(1);
   });
 });
