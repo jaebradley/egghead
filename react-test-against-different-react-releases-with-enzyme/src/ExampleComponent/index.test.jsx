@@ -84,4 +84,10 @@ describe('<ExampleComponent />', () => {
     expect(ExampleComponent.prototype.componentWillReceiveProps.mock.calls.length).toBe(1);
     expect(wrapper.find('.lifeCycleMethod').text()).toEqual('componentWillReceiveProps');
   });
+
+  it('handleStrings function returns correctly', () => {
+    const wrapper = shallow(<ExampleComponent />);
+    expect(wrapper.instance().handleStrings('foobar')).toBe(false);
+    expect(wrapper.instance().handleStrings('jaebaebae')).toBe(true);
+  });
 });

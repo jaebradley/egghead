@@ -86,3 +86,8 @@
 
 * `spyOn` component's `componentDidMount` via `Component.prototype`
 * Need to add `componentDidMount` in the component itself
+
+## Access component class methods via the `instance` method
+
+* Can access methods on component using `instance()` method
+* If component has method `getA`, can test `getA` using `wrapper.instance().getA()`

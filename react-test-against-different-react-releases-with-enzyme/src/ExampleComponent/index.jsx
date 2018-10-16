@@ -21,6 +21,10 @@ class ExampleComponent extends React.Component {
     this.setState({ lifeCycleMethod: 'componentWillReceiveProps' });
   }
 
+  handleStrings(value) {
+    return value === 'jaebaebae';
+  }
+
   render() {
     return (
       <div>
