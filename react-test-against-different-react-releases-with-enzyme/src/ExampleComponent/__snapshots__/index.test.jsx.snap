@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ExampleComponent /> matches the snapshot 1`] = `
+<div>
+  <header
+    className="jae baebae"
+  >
+    <img
+      alt="React logo"
+      src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+    />
+    <h1>
+      Blah blah blah I'm an example
+    </h1>
+    <h3
+      className="blue"
+    >
+      Everyone is Welcome!
+    </h3>
+  </header>
+  <Title
+    text="Blah blah blah I'm a Title"
+  />
+  <p
+    className="example-content"
+  >
+    Blah blah blah I'm a p element
+  </p>
+  <p
+    className="button-state"
+  >
+    No!
+  </p>
+  <button
+    onClick={[Function]}
+  >
+    Click me
+  </button>
+  <h2 />
+  <input
+    onChange={[Function]}
+  />
+  <p
+    className="lifeCycleMethod"
+  >
+    componentDidMount
+  </p>
+</div>
+`;
