@@ -91,3 +91,9 @@
 
 * Can access methods on component using `instance()` method
 * If component has method `getA`, can test `getA` using `wrapper.instance().getA()`
+
+## Testing Redux-connected Component
+
+* `exports` the connected component (by `default`) and the `React` component as a named component
+* For a `TodoList` component, a test would be to test that the `addTodo` `prop` is called when simulating a button click
+  * Probably want to mock `addTodo` using `jest` and then asserting that the `addTodo` mock was called correctly
