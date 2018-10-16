@@ -9,7 +9,16 @@ class ExampleComponent extends React.Component {
       on: false,
       inputValue: '',
       mainColor: 'blue',
+      lifeCycleMethod: '',
     };
+  }
+
+  componentDidMount() {
+    this.setState({ lifeCycleMethod: 'componentDidMount' });
+  }
+
+  componentWillReceiveProps() {
+    this.setState({ lifeCycleMethod: 'componentWillReceiveProps' });
   }
 
   render() {
@@ -39,6 +48,9 @@ class ExampleComponent extends React.Component {
           {this.state.inputValue}
         </h2>
         <input onChange={e => this.setState({ inputValue: e.currentTarget.value })} />
+        <p className='lifeCycleMethod'>
+          {this.state.lifeCycleMethod}
+        </p>
       </div>
     );
   }

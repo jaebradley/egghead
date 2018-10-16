@@ -81,3 +81,8 @@
 ## `setState`
 
 * Can update state doing `wrapper.setState({ someStateProperty: someStateValue })`
+
+## Mock `componentDidMount`
+
+* `spyOn` component's `componentDidMount` via `Component.prototype`
+* Need to add `componentDidMount` in the component itself

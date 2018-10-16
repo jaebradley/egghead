@@ -9,8 +9,8 @@ import ExampleComponent from './';
 describe('<ExampleComponent />', () => {
   const wrapper = shallow(<ExampleComponent />);
 
-  it('should contain 2 p elements', () => {
-    expect(wrapper.find('p').length).toBe(2);
+  it('should contain 3 p elements', () => {
+    expect(wrapper.find('p').length).toBe(3);
   });
 
   it('should contain an element with class name "example content"', () => {
@@ -68,5 +68,20 @@ describe('<ExampleComponent />', () => {
     wrapper.setState({ mainColor: 'red' });
     expect(wrapper.find('.blue').length).toBe(0);
     expect(wrapper.find('.red').length).toBe(1);
+  });
+
+  it('calls componentDidMount, updates p tag text', () => {
+    jest.spyOn(ExampleComponent.prototype, 'componentDidMount');
+    const wrapper = shallow(<ExampleComponent />);
+    expect(ExampleComponent.prototype.componentDidMount.mock.calls.length).toBe(1);
+    expect(wrapper.find('.lifeCycleMethod').text()).toEqual('componentDidMount');
+  });
+
+  it('setProps will call componentReceiveProps', () => {
+    jest.spyOn(ExampleComponent.prototype, 'componentWillReceiveProps');
+    const wrapper = shallow(<ExampleComponent />);
+    wrapper.setProps({ hide: true });
+    expect(ExampleComponent.prototype.componentWillReceiveProps.mock.calls.length).toBe(1);
+    expect(wrapper.find('.lifeCycleMethod').text()).toEqual('componentWillReceiveProps');
   });
 });
